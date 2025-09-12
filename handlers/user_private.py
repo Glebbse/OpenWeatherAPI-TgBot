@@ -1,8 +1,7 @@
-from aiogram import Router, types, F
+from aiogram import Router, types
 from aiogram.filters import Command
-from aiogram.utils.i18n import gettext
 
-from open_weather_tg_bot.common.bot_cmds import private, text_commands
+from common.bot_cmds import text_commands
 # from open_weather_tg_bot.filters.chat_types import ChatTypeFilter
 
 from aiogram.filters import CommandStart
@@ -28,9 +27,7 @@ async def menu_cmd(message: types.Message):
 
 @user_private_router.message(Command("current_weather"))
 async def current_weather_cmd(message: types.Message):
-    await message.answer("Enter your city:")
-    city =
-    await message.
+    await message.answer("Enter your city:\nExample: London")
 
 @user_private_router.message(Command("daily_forecast"))
 async def daily_forecast_cmd(message: types.Message):
