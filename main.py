@@ -3,15 +3,16 @@ import asyncio
 
 from aiogram import Bot, Dispatcher, types
 from dotenv import load_dotenv
+from aiogram.client.default import DefaultBotProperties
+from aiogram.fsm.strategy import FSMStrategy
 
 from handlers.user_private import user_private_router
 from common.bot_cmds import private
 
-
 ALLOWED_UPDATES = ["message"]
 load_dotenv()
-bot = Bot(token=os.getenv("TOKEN"))
-dp = Dispatcher()
+bot = Bot(token=os.getenv("TOKEN"), default=DefaultBotProperties(parse_mode="HTML"))
+dp = Dispatcher(fsm_strategy= FSMStrategy.USER_IN_CHAT)
 dp.include_routers(user_private_router)
 
 async def main():
