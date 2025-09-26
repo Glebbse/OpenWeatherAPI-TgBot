@@ -27,7 +27,7 @@
         "morn": 18.97
       },
       "pressure": 1020,
-      "humidity": 59,
+      "humidity": 59,isi
       "dew_point": 16.83,
       "wind_speed": 4.69,
       "wind_deg": 194,
